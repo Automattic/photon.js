@@ -60,10 +60,10 @@ describe('photon()', function () {
     assertQuery(photonedUrl, { 'w':'50' });
   });
 
-  it('should leave URLs with querystrings from non-photon hosts alone', function() {
+  it('should return null for URLs with querystrings from non-photon hosts', function() {
     var url = 'http://example.com/image.png?foo=bar';
 
-    assert.strictEqual(photon(url), url);
+    assert.strictEqual(photon(url), null);
   });
 
   it('should handle protocolless URLs', function() {

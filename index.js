@@ -61,7 +61,7 @@ function photon (imageUrl, opts) {
   } else {
     // Photon does not support URLs with a querystring component
     if (parsedUrl.search ) {
-      return imageUrl;
+      return null;
     }
     params.pathname = url.format( parsedUrl ).substring(1);
     params.hostname = serverFromPathname( params.pathname );
@@ -112,4 +112,3 @@ function serverFromPathname( pathname ) {
   debug('determined server "%s" to use with "%s"', server, pathname);
   return server + '.wp.com';
 }
-
