@@ -1,3 +1,8 @@
+# This repository has moved!
+
+It is not part of the [Calypso](https://github.com/Automattic/wp-calypso/tree/master/packages/photon) repository.
+
+
 # photon.js
 [![Build Status](https://travis-ci.org/Automattic/photon.js.svg?branch=master)](https://travis-ci.org/Automattic/photon.js)
 
