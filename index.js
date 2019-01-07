@@ -55,7 +55,7 @@ function photon (imageUrl, opts) {
     query: {}
   };
 
-  if ( isAlreadyPhotoned( parsedUrl.host ) ) {
+  if ( isWpcomImage( parsedUrl.host ) || isAlreadyPhotoned( parsedUrl.host ) ) {
     // We already have a server to use.
     // Use it, even if it doesn't match our hash.
     params.pathname = parsedUrl.pathname;
@@ -98,6 +98,10 @@ function photon (imageUrl, opts) {
   var photonUrl = url.format(params);
   debug('generated Photon URL: %s', photonUrl);
   return photonUrl;
+}
+
+function isWpcomImage( host ) {
+  return /\.files\.wordpress\.com$/.test(host)
 }
 
 function isAlreadyPhotoned( host ) {
