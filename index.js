@@ -101,7 +101,7 @@ function photon (imageUrl, opts) {
 }
 
 function isWpcomImage( host ) {
-  return /\.files\.wordpress\.com$/.test(host)
+  return /\.files\.wordpress\.com$/.test(host);
 }
 
 function isAlreadyPhotoned( host ) {
