@@ -1,3 +1,8 @@
+3.0.0 / 2018-01-08
+==================
+
+  * Add support for WordPress.com photon server (#10, @sirreal)
+
 2.0.1 / 2017-11-08
 ==================
 
