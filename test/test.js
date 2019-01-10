@@ -58,25 +58,12 @@ describe('photon()', function () {
     assert.strictEqual(photon(url), url);
   });
 
-  it('should handle photoning a WordPress.com url', function() {
-    var url = photon('https://example.files.wordpress.com/2018/12/pexels-photo-1461974.jpeg');
-    assert.strictEqual(photon(url), url);
-  });
-
   it('should add width parameters if specified', function() {
     var photonedUrl = photon('http://example.com/image.png', { width: 50 });
     var parsedUrl = parseUrl(photonedUrl, true, true);
 
     assertQuery(photonedUrl, { 'w':'50' });
   });
-
-  it('should add width parameters to WordPress.com url if specified', function() {
-    var photonedUrl = photon('https://example.files.wordpress.com/2018/12/pexels-photo-1461974.jpeg', { width: 50 });
-    var parsedUrl = parseUrl(photonedUrl, true, true);
-
-    assertQuery(photonedUrl, { 'w':'50' });
-  });
-
 
   it('should return null for URLs with querystrings from non-photon hosts', function() {
     var url = 'http://example.com/image.png?foo=bar';
